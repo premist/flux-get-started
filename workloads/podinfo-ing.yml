@@ -6,6 +6,11 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "traefik"
 spec:
-  backend:
-    serviceName: podinfo
-    servicePort: 80
+  rules:
+    - host: podinfo.13.124.122.53.xip.io
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: podinfo
+              servicePort: 80
